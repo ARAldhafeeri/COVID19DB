@@ -1,4 +1,4 @@
-# Foobar
+# COVID19D Dashboard
 
 Simple dashboard developed using Django. The Dashboard display information
 Dynamically based on user selection World, Country, City. The data will be updated Daily.
