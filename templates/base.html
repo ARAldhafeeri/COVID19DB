@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <title> {% block title %}  COVID19 Dashboard{% endblock %} </title>
+        {% block head %} {% endblock head %}
+    </head>
+    <body>
+      <div class="container -flex align-item-center h-100">
+          <div class="wrapper">
+            <div class="sidebar">
+                <h2>COVID19 Dashboard</h2>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                    <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+                    <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
+                    <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+                    <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+                    <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
+                </ul> 
+                <div class="social_media">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="main_content">
+                <div class="header">Welcome!! Data is updated on a daily basis! Have a nice day. Eng. Ahmed Rakan Aldhafeeri</div>  
+                <div class="info">
+                  {% block body %}
+                  {% endblock body %}
+              </div>
+            </div>
+        </div>
+      </div>
+
+ 
+    <div id="footer">
+        {% include "footer.html" %}
+        {% block footer %} {% endblock footer %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    {% block scripts %}
+    {% endblock scripts %}
+    </body>
+
+</html>

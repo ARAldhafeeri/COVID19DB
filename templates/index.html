@@ -8,29 +8,31 @@
         {% block body %}
         <div class="row">
             <div class="col">
-               <div class="circle_wrapper">
-                        <p>hello world</p>
+                <div class="card">  
+                    <div class="circle_wrapper">
+                        <p class="p-circles-num">{{circles_data["cases"]}} </br><small class="p-circles-text">Confirmed Cases</small></p>
+                    </div>
                 </div>
             </div>
             <div class="col">
-               <div class="circle_wrapper">
-                        <p>hello world</p>
+                <div class="card">
+                    <div class="circle_wrapper">
+                            <p class="p-circles-num">{{circles_data["deaths"]}} </br><small class="p-circles-text">Total Deaths</small></p>
+                    </div>
                 </div>
             </div>
             <div class="col">
-               <div class="circle_wrapper">
-                        <p>hello world</p>
+                <div class="card">
+                    <div class="circle_wrapper">
+                            <p class="p-circles-num">{{circles_data["confrimed_today"]}}</br><small class="p-circles-text">New cases</small></p>
+                    </div>
                 </div>
             </div>
         </div>
-         
-        <div class="row"> 
-  
-
+        <div class="card">
+             {% include "map.html" %}
         </div>
-        <div class="col">
-        <p> hello world </p>
-        </div>
+       
         {% endblock body %}
     </body>
 
