@@ -17,5 +17,7 @@ def context_processor():
 
 if __name__ == "__main__":
     circles_data = Data()
-    circles_data.plot_map()
+    circles_data.plot_maps()
+    circles_data.plot_bars()
+    circles_data.plot_lines()
     app.run(debug=True)

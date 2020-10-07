@@ -10,35 +10,56 @@
         <title> {% block title %}  COVID19 Dashboard{% endblock %} </title>
         {% block head %} {% endblock head %}
     </head>
-    <body>
-      <div class="container -flex align-item-center h-100">
-          <div class="wrapper">
-            <div class="sidebar">
-                <h2>COVID19 Dashboard</h2>
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
-                    <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
-                    <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
-                    <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
-                    <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
-                    <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
-                </ul> 
-                <div class="social_media">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
-            <div class="main_content">
-                <div class="header">Welcome!! Data is updated on a daily basis! Have a nice day. Eng. Ahmed Rakan Aldhafeeri</div>  
-                <div class="info">
-                  {% block body %}
-                  {% endblock body %}
-              </div>
+    <body>      
+      <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid ">
+          <div class="navbar-header navbar-fixed-top">
+              <button type="button" class="navbar-toggle collapsed fa fa-bars" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              </button>
+       
+
+                    
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="https://github.com/ARAldhafeeri">github</a></li>
+              <li><a href="https://www.linkedin.com/in/araldhafeeri11/">linkeden</a></li>
+              <li><a href="https://github.com/CSSEGISandData/COVID-19">Data</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <nav id="spy">
+                <ul class="sidebar-nav nav">
+                    <li class="sidebar-brand">
+                        <a href="https://github.com/ARAldhafeeri"><span class="fa fa-home">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/araldhafeeri11/">
+                            <span class="fa fa-anchor">linkeden</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/CSSEGISandData/COVID-19">
+                            <span class="fa fa-anchor">Data</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="page-content">
+                <div class="container justfiy-content-center">
+                {% block body %} {% endblock body %}
+                </div>
             </div>
         </div>
       </div>
+
 
  
     <div id="footer">
@@ -48,6 +69,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="{{ url_for( 'static', filename='js/sidebar.js')}}" />
     {% block scripts %}
     {% endblock scripts %}
     </body>

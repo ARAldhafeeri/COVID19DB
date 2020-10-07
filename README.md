@@ -5,7 +5,6 @@ Dynamically based on user selection World, Country, City. The data will be updat
 
 ## Data
 
-  https://api.statworx.com/covid
    https://github.com/CSSEGISandData/COVID-19
 
 ## Requirements
