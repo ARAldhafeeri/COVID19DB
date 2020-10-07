@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from data import Data
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret'
+app.config['SECRET_KEY'] = 'kajlkafsdljhdsfaljkfhljk3398339p83293unw'
 
 @app.route('/')
 def index():
