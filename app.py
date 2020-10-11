@@ -3,8 +3,8 @@ from data import Data
 import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kajlkafsdljhdsfaljkfhljk3398339p83293unw'
-# Do I need to specify port on heroku ?
-# port = int(os.environ.get('PORT', 5000))
+# Do I need to specify port on heroku
+port = int(os.environ.get('PORT', 5000))
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     circles_data.plot_maps()
     circles_data.plot_bars()
     circles_data.plot_lines()
-    app.run()
+    app.run(port)
