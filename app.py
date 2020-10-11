@@ -20,4 +20,4 @@ if __name__ == "__main__":
     circles_data.plot_maps()
     circles_data.plot_bars()
     circles_data.plot_lines()
-    app.run(debug=True)
+    app.run()
