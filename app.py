@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from data import Data
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.config['SECRET_KEY'] = 'kajlkafsdljhdsfaljkfhljk3398339p83293unw'
 
 @app.route('/')
