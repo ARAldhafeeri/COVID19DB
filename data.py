@@ -134,7 +134,7 @@ class Data:
             if i == 257:
                 break
             fig_bar_death.add_trace(
-                go.Bar(x=["Region", "Country"], y =[0,sum(list(self.df_deaths.iloc[i][4:]))],
+                go.Bar(x=["Region", "Country"], y =[0,sum(self.df_deaths.iloc[i][4:])],
                         name=self.df_deaths.iloc[i][1]))
         fig_bar_death.write_html("templates/bar_deaths.html")
 
@@ -143,7 +143,7 @@ class Data:
             if i == 257:
                 break
             fig_bar_confirmed.add_trace(
-                go.Bar(x=["Region", "Country"], y =[0,sum(list(self.df_confirmed.iloc[i][4:]))],
+                go.Bar(x=["Region", "Country"], y =[0, sum(self.df_confirmed.iloc[i][4:])],
                         name=self.df_confirmed.iloc[i][1]))
         fig_bar_confirmed.write_html("templates/fig_bar_confirmed.html")
 
@@ -153,7 +153,7 @@ class Data:
             if i == 250:
                 break
             fig_bar_recovered.add_trace(
-                go.Bar(x=["Region", "Country"], y =[0,sum(list(self.df_recovered.iloc[i][4:]))],
+                go.Bar(x=["Region", "Country"], y =[0,sum(self.df_recovered.iloc[i][4:])],
                         name=self.df_recovered.iloc[i][1]))
         fig_bar_recovered.write_html("templates/fig_bar_recovered.html")
 
