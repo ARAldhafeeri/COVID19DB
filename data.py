@@ -127,34 +127,34 @@ class Data:
         fig_line_recovered.write_html("templates/fig_line_recovered.html")
             
 
-    def plot_bars(self):
-        """ A method to plot all bar graphs"""
-        fig_bar_death = go.Figure()
-        for i in range(0, len(self.time)):
-            if i == 257:
-                break
-            fig_bar_death.add_trace(
-                go.Bar(x=["Region", "Country"], y =[0,sum(self.df_deaths.iloc[i][4:])],
-                        name=self.df_deaths.iloc[i][1]))
-        fig_bar_death.write_html("templates/bar_deaths.html")
+    # def plot_bars(self):
+    #     """ A method to plot all bar graphs"""
+    #     fig_bar_death = go.Figure()
+    #     for i in range(0, len(self.time)):
+    #         if i == 257:
+    #             break
+    #         fig_bar_death.add_trace(
+    #             go.Bar(x=["Region", "Country"], y =[0,sum(self.df_deaths.iloc[i][4:])],
+    #                     name=self.df_deaths.iloc[i][1]))
+    #     fig_bar_death.write_html("templates/bar_deaths.html")
 
-        fig_bar_confirmed = go.Figure()
-        for i in range(0, len(self.time)):
-            if i == 257:
-                break
-            fig_bar_confirmed.add_trace(
-                go.Bar(x=["Region", "Country"], y =[0, sum(self.df_confirmed.iloc[i][4:])],
-                        name=self.df_confirmed.iloc[i][1]))
-        fig_bar_confirmed.write_html("templates/fig_bar_confirmed.html")
+    #     fig_bar_confirmed = go.Figure()
+    #     for i in range(0, len(self.time)):
+    #         if i == 257:
+    #             break
+    #         fig_bar_confirmed.add_trace(
+    #             go.Bar(x=["Region", "Country"], y =[0, sum(self.df_confirmed.iloc[i][4:])],
+    #                     name=self.df_confirmed.iloc[i][1]))
+    #     fig_bar_confirmed.write_html("templates/fig_bar_confirmed.html")
 
 
-        fig_bar_recovered = go.Figure()
-        for i in range(0, len(self.time)):
-            if i == 250:
-                break
-            fig_bar_recovered.add_trace(
-                go.Bar(x=["Region", "Country"], y =[0,sum(self.df_recovered.iloc[i][4:])],
-                        name=self.df_recovered.iloc[i][1]))
-        fig_bar_recovered.write_html("templates/fig_bar_recovered.html")
+    #     fig_bar_recovered = go.Figure()
+    #     for i in range(0, len(self.time)):
+    #         if i == 250:
+    #             break
+    #         fig_bar_recovered.add_trace(
+    #             go.Bar(x=["Region", "Country"], y =[0,sum(self.df_recovered.iloc[i][4:])],
+    #                     name=self.df_recovered.iloc[i][1]))
+    #     fig_bar_recovered.write_html("templates/fig_bar_recovered.html")
 
 
