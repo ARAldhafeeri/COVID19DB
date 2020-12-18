@@ -3,7 +3,7 @@ from data import Data
 import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kajlkafsdljhdsfaljkfhljk3398339p83293unw'
-port = int(os.environ.get('PORT', 5000))
+#port = int(os.environ.get('PORT', 5000))
 circles_data = Data()
 @app.route('/')
 def index():
