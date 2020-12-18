@@ -13,59 +13,98 @@
                             </br><small class="p-circles-text">Confirmed Cases</small></p>
                     </div>
                 </div>
-                <div class="col cardcircles">
+                <div class="col-sm cardcircles">
                         <div class="circle_wrapper">
                                 <p class="p-circles-num">{{circles_data["deaths"]}} </br><small class="p-circles-text">Total Deaths</small></p>
                         </div>
                 </div>
-                <div class="col cardcircles">
+                <div class="col-sm cardcircles">
                         <div class="circle_wrapper">
                                 <p class="p-circles-num">{{circles_data["recovered"]}} </br><small class="p-circles-text">Recovered</small></p>
                         </div>
                 </div>
-                <div class="col cardcircles">
+                <div class="col-sm cardcircles">
                         <div class="circle_wrapper">
                                 <p class="p-circles-num">{{circles_data["confrimed_today"]}}</br><small class="p-circles-text">New cases</small></p>
                         </div>
                 </div>
             </div>
         {# All the lnes graphs #}
-        <div class="col justify-content-center card">
-            <div class="card">
-            <h1> Country name map </h1>
-                {% include "country_name_map.html" %}
+
+
+            <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1> Country name map </h1>
+                    </div>
+                    <div class="row card float-left">
+                    {% include "country_name_map.html" %}
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h1> Confirmed cases map </h1>
-                {% include "confirmed_map.html" %}
+            <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1>  Confirmed cases map </h1>
+                    </div>
+                    <div class="row card float-left">
+                    {% include "confirmed_map.html" %}
+                    </div>
+                </div>
             </div>
-             <div class="card">
-             <h1> Death cases map </h1>
-                {% include "deaths_map.html" %}
+            <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1> Death cases map</h1>
+                    </div>
+                    <div class="row card float-left">
+                    {% include "deaths_map.html" %}
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h1> Recovered cases map </h1>
-                {% include "recovered.html" %}
+            <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1> Recovered cases map  </h1>
+                    </div>
+                    <div class="row card float-left">
+                    {%  include "recovered.html" %}
+                    </div>
+                </div>
             </div>
-        </div>
 
          {# All the line graphs #}
-        <div class="col  justify-content-center  card">
-        
-            <div class=" row card">
-             <h1> Confirmed cases</h1>
-                {% include "fig_line_recovered.html" %}
+         <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1> Recovdred cases</h1>
+                    </div>
+                    <div class="row card float-left">
+                    {% include "fig_line_recovered.html" %}
+                    </div>
+                </div>
             </div>
-            <div class=" row card">
-                <h1> Confirmed cases</h1>
-                {% include "fig_line_confiremed.html" %}
+            <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1> confirmed cases  </h1>
+                    </div>
+                    <div class="row card float-left">
+                    {%  include "fig_line_confiremed.html" %}
+                    </div>
+                </div>
             </div>
-             <div class=" row card">
-             <h1> Death cases  </h1>
-                {% include "line_deaths.html" %}
+            <div class="row">
+                <div class="col">
+                    <div class="row-sm">
+                        <h1> Death cases  </h1>
+                    </div>
+                    <div class="row card float-left">
+                    {%  include "line_deaths.html" %}
+                    </div>
+                </div>
             </div>
-        </div>
-
+            
          {# All the bar graphs
         <div class="col justify-content-center card">
             <div class=" row card">

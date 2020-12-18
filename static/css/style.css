@@ -230,8 +230,8 @@ a:hover,
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: cover;
   height: cover;
-  margin: 20px;
-  padding: 30px;
+  margin: 5px;
+  padding: 5px;
 }
 /* On mouse-over, add a deeper shadow */
 .card:hover {
