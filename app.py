@@ -18,4 +18,11 @@ def map():
     return render_template("map.html")
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    circles_data.plot_maps()
+    #circles_data.plot_bars()
+    circles_data.plot_lines()
+    app.run(host='0.0.0.0')
+>>>>>>> cde8fc6849827f20213034504c75cfd57ca86826
