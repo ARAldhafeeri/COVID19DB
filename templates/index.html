@@ -1,40 +1,180 @@
 {% extends "base.html" %}
 <!DOCTYPE html>
-<html lang='en'>
-    {% block head %}
-    <title> Covid 19 Dashboard </title>
-    {% endblock head %}
-    <body>
-        {% block body %}
-            <div class="row m-2 justfiy-centent-center">
-                <div class="col-sm cardcircles justfiy-centent-center">
-                    <div class="circle_wrapper m-2 ">
-                        <p class="p-circles-num">{{circles_data["cases"]}} 
-                        </br><small class="p-circles-text">Confirmed Cases</small></p>
-                    </div>
+<html lang="en">
+  {% block head %}
+  <title>Covid 19 Dashboard</title>
+  {% endblock head %}
+  <body>
+    {% block body %} {# cards #}
+    <div class="row">
+      <div class="col-xl-3 col-lg-6">
+        <div class="card card-stats mb-4 mb-xl-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">
+                  Confirmed
+                </h5>
+                <h4>{{ data["cases"]}}</h4>
+              </div>
+              <div class="col-auto">
+                <div
+                  class="icon icon-shape bg-danger text-white rounded-circle shadow"
+                >
+                  <i class="fas fa-chart-bar"></i>
                 </div>
-                <div class="col-sm  cardcircles justfiy-centent-center">
-                    <div class="circle_wrapper  m-2">
-                            <p class="p-circles-num">{{circles_data["deaths"]}} </br><small class="p-circles-text">Total Deaths</small></p>
-                    </div>
-                </div>
-                <div class="col-sm  cardcircles justfiy-centent-center">
-                    <div class="circle_wrapper  m-2">
-                            <p class="p-circles-num">{{circles_data["recovered"]}} </br><small class="p-circles-text">Recovered</small></p>
-                    </div>
-                </div>
-                <div class="col-sm cardcircles  justfiy-centent-center">
-                    <div class="circle_wrapper  m-2">
-                            <p class="p-circles-num">{{circles_data["confrimed_today"]}}</br><small class="p-circles-text">New cases</small></p>
-                    </div>
-                </div>
+              </div>
             </div>
-        {% endblock body %}
-       
-    </body>
+            <p class="mt-3 mb-0 text-muted text-sm">
+              <span class="text-success mr-2"
+                ><i class="fa fa-arrow-up"></i>{{
+                data['confirmed_change']}}%</span
+              >
+              <span class="text-nowrap">
+                ( +{{ data['confirmed_today']}} ) Since yesterday</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-6">
+        <div class="card card-stats mb-4 mb-xl-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">
+                  Recovered
+                </h5>
+                <h4>{{ data["recovered"]}}</h4>
+              </div>
+              <div class="col-auto">
+                <div
+                  class="icon icon-shape bg-warning text-white rounded-circle shadow"
+                >
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 mb-0 text-muted text-sm">
+              <span class="text-danger mr-2"
+                ><i class="fas fa-arrow-up"></i>
+                {{data['recovered_change']}}%</span
+              >
+              <span class="text-nowrap">
+                ( +{{ data['recovered_today']}} ) Since yesterday</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-6">
+        <div class="card card-stats mb-4 mb-xl-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">
+                  Deaths
+                </h5>
+                <h4>{{ data["deaths"]}}</h4>
+              </div>
+              <div class="col-auto">
+                <div
+                  class="icon icon-shape bg-yellow text-white rounded-circle shadow"
+                >
+                  <i class="fa fa-sad-cry"></i>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 mb-0 text-muted text-sm">
+              <span class="text-warning mr-2"
+                ><i class="fas fa-arrow-up"></i>
+                {{data['confirmed_change']}}%</span
+              >
+              <span class="text-nowrap">
+                ( +{{ data['deaths_today']}} ) Since yesterday</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      {#
+      <div class="col-xl-3 col-lg-6">
+        <div class="card card-stats mb-4 mb-xl-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">
+                  New Cases
+                </h5>
+                <h4>{{ data["confrimed_today"]}}</h4>
+              </div>
+              <div class="col-auto">
+                <div
+                  class="icon icon-shape bg-info text-white rounded-circle shadow"
+                >
+                  <i class="fa fa-life-ring"></i>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 mb-0 text-muted text-sm">
+              <span class="text-success mr-2"
+                ><i class="fas fa-arrow-up"></i
+                >{{data['confirmed_change']}}%</span
+              >
+              <span class="text-nowrap"
+                >( +{{data['confirmed_today']}})Since yesterday</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      #}
+    </div>
+    {# Maps section #}
+    <div id="toggle_maps">
+      <div class="dropdown show">
+        <a
+          class="btn btn-secondary dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown link
+        </a>
 
-    {% block footer %}
-    {% endblock footer %}
-    {% block scripts %}
-    {% endblock scripts %}
-</html
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Confirmed map</a>
+          <a class="dropdown-item" href="#">Recovered map</a>
+          <a class="dropdown-item" href="#">Deaths map</a>
+        </div>
+      </div>
+      <div class="row mp-5">{% include 'confirmed_map.html' %}</div>
+    </div>
+    {# line graphs section #}
+    <div id="toggle_lines">
+      <div class="row mp-5">{% include 'fig_line_confirmed.html' %}</div>
+    </div>
+    {% endblock body %}
+  </body>
+
+  {% block footer %} {% endblock footer %} {% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    maps = new Vue({
+        el: '#toggle_map',
+        delimiters: ['[[', ']]']
+        di
+        data: {
+            urls: [
+                'templates/confirmed_map.html',
+                'templates/deaths_map.html',
+                'templates/recovered_map.html'
+            ]
+        }
+    })
+  </script>
+  {% endblock scripts %}
+</html>
