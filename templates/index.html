@@ -131,50 +131,54 @@
       #}
     </div>
     {# Maps section #}
-    <div id="toggle_maps">
-      <div class="dropdown show">
-        <a
-          class="btn btn-secondary dropdown-toggle"
-          href="#"
-          role="button"
-          id="dropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown link
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Confirmed map</a>
-          <a class="dropdown-item" href="#">Recovered map</a>
-          <a class="dropdown-item" href="#">Deaths map</a>
-        </div>
+    <h2 class="m-2">Maps</h2>
+    <script language="JavaScript" type="text/javascript"
+      src="{{ url_for('static', filename='/js/maps_toggle.js') }}"></script>
+      <div class="row m-2">
+        <select name="map_select" class="drop-down" onchange="switchMap(this)" type="file">
+          <option value="confirmed">Confirmed/country map</option>
+          <option value="deaths">deaths/country map</option>
+          <option value="recovered">Recovered/country map</option>
+        </select>
       </div>
-      <div class="row mp-5">{% include 'confirmed_map.html' %}</div>
-    </div>
+      <div class="row m-2">
+        <iframe id="show_map"
+          width="800"
+          height="500"
+          src="{{url_for('confirmed_map')}}"
+        ></iframe>
+      </div>
     {# line graphs section #}
-    <div id="toggle_lines">
-      <div class="row mp-5">{% include 'fig_line_confirmed.html' %}</div>
-    </div>
-    {% endblock body %}
-  </body>
+    <h2 class="m-2"> Line graphs ( cases/days ) </h2>
+    <div class="row m-2">
+        <select name="map_select" class="drop-down" onchange="showLines(this)" type="file">
+          <option value="confirmed_lines">Confirmed/days</option>
+          <option value="deaths_lines">deaths/days</option>
+          <option value="recovered_lines">Recovered/days</option>
+        </select>
+      </div>
+      <div class="row m-2">
+        <iframe id="show_lines"
+          width="800"
+          height="500"
+          src="{{url_for('confirmed_lines')}}"
+        ></iframe>
+      </div>
+      <h2 class="m-2"> Table </h2>
+      <div class="row m-2">
+        <iframe id="show_lines" width="800" height="500" src="{{url_for('display_table')}}"></iframe>
+      </div>
 
-  {% block footer %} {% endblock footer %} {% block scripts %}
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  <script>
-    maps = new Vue({
-        el: '#toggle_map',
-        delimiters: ['[[', ']]']
-        di
-        data: {
-            urls: [
-                'templates/confirmed_map.html',
-                'templates/deaths_map.html',
-                'templates/recovered_map.html'
-            ]
-        }
-    })
-  </script>
+      <h2 class="m-2"> Request data API </h2>
+      <div class="row m-2">
+       <p>https://www.coviddashboard.site/api/cleaned_data/</p>
+      </div>
+    {% endblock body %}
+
+  {% block footer %} {% endblock footer %} 
+  
+  {% block scripts %}
+
   {% endblock scripts %}
+</body>
 </html>
